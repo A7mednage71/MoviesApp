@@ -1,7 +1,7 @@
 import '../Entites/MovieEntity.dart';
 
 abstract class HomeMoviesRepo {
-  Future<MovieEntity> fetchNowPlaying();
-  Future<MovieEntity> fetchPopularMovies();
-  Future<MovieEntity> fetchTopRatedMovies();
+  Future<List<MovieEntity>> fetchNowPlaying();
+  Future<List<MovieEntity>> fetchPopularMovies();
+  Future<List<MovieEntity>> fetchTopRatedMovies();
 }
