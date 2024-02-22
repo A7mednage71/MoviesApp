@@ -1,3 +1,6 @@
+import 'package:hive/hive.dart';
+
+import '../../../../Constents.dart';
 import '../../domain/Entites/MovieEntity.dart';
 
 abstract class LocalDataSource {
@@ -6,23 +9,22 @@ abstract class LocalDataSource {
   List<MovieEntity> fetchTopRatedMovies();
 }
 
-class LocalDataSourceImp extends LocalDataSource{
+class LocalDataSourceImp extends LocalDataSource {
   @override
   List<MovieEntity> fetchNowPlaying() {
-    // TODO: implement fetchNowPlaying
-    throw UnimplementedError();
+    var moves = Hive.box<MovieEntity>(knowPlaying);
+    return moves.values.toList();
   }
 
   @override
   List<MovieEntity> fetchPopularMovies() {
-    // TODO: implement fetchPopularMovies
-    throw UnimplementedError();
+    var moves = Hive.box<MovieEntity>(kPopular);
+    return moves.values.toList();
   }
 
   @override
   List<MovieEntity> fetchTopRatedMovies() {
-    // TODO: implement fetchTopRatedMovies
-    throw UnimplementedError();
+    var moves = Hive.box<MovieEntity>(kTopRated);
+    return moves.values.toList();
   }
-
 }

@@ -9,9 +9,9 @@ void main() async {
 
   Hive.registerAdapter(MovieEntityAdapter());
 
-  await Hive.openBox(knowPlaying);
-  await Hive.openBox(kPopular);
-  await Hive.openBox(kTopRated);
+  await Hive.openBox<MovieEntity>(knowPlaying);
+  await Hive.openBox<MovieEntity>(kPopular);
+  await Hive.openBox<MovieEntity>(kTopRated);
 
   runApp(const MoviesApp());
 }
