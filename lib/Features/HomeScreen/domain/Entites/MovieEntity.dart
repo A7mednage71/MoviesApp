@@ -1,17 +1,17 @@
 class MovieEntity {
-  final num id;
-  final String title;
+  final int movieId;
+  final String movieTitle;
   final String image;
-  final double voteAverage;
+  final double voteAver;
   final String description;
   final List<int> genreids;
   final String date;
 
   MovieEntity({
-    required this.id,
-    required this.title,
+    required this.movieId,
+    required this.movieTitle,
     required this.image,
-    required this.voteAverage,
+    required this.voteAver,
     required this.description,
     required this.genreids,
     required this.date,
