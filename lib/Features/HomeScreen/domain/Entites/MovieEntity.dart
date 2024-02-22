@@ -7,13 +7,13 @@ class MovieEntity {
   final List<int> genreids;
   final String date;
 
-  MovieEntity(
-    this.id,
-    this.title,
-    this.image,
-    this.voteAverage,
-    this.description,
-    this.genreids,
-    this.date,
-  );
+  MovieEntity({
+    required this.id,
+    required this.title,
+    required this.image,
+    required this.voteAverage,
+    required this.description,
+    required this.genreids,
+    required this.date,
+  });
 }
