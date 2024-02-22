@@ -1,8 +1,9 @@
 
+import 'package:equatable/equatable.dart';
 import 'package:hive_flutter/adapters.dart';
 part 'MovieEntity.g.dart';
 @HiveType(typeId: 0)
-class MovieEntity {
+class MovieEntity extends Equatable {
   @HiveField(0)
   final int movieId;
   @HiveField(1)
@@ -27,4 +28,8 @@ class MovieEntity {
     required this.genreids,
     required this.date,
   });
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
 }
