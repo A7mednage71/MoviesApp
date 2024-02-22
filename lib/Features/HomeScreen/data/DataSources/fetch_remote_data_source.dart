@@ -24,14 +24,18 @@ class RemoteDataSourceImp extends RemoteDataSource {
   }
 
   @override
-  Future<List<MovieEntity>> fetchPopularMovies() {
-    // TODO: implement fetchPopularMovies
-    throw UnimplementedError();
+  Future<List<MovieEntity>> fetchPopularMovies() async {
+    var data = await apiService.get(endPoint: "movie/popular");
+
+    List<MovieEntity> movies = GetData(data);
+    return movies;
   }
 
   @override
-  Future<List<MovieEntity>> fetchTopRatedMovies() {
-    // TODO: implement fetchTopRatedMovies
-    throw UnimplementedError();
+  Future<List<MovieEntity>> fetchTopRatedMovies() async {
+    var data = await apiService.get(endPoint: "movie/top_rated");
+
+    List<MovieEntity> movies = GetData(data);
+    return movies;
   }
 }
